@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica1</title>
+    <script>
+        var productos =
+        [
+            ["1", "Balon", "100", "balon.jpg"],
+            ["2", "Balon Americano", "150", "balonamericano.jpg"],
+            ["3", "CaguaMiller", "40", "caguamiller.jpg"],
+            ["4", "Caguamanta", "120", "caguamanta.jpg"],
+            ["5", "Chips", "30", "chips.jpg"],
+            ["6", "Hamburguesa", "250", "hamburguesa.jpg"],
+            ["7", "lasagna", "200", "lasagna.jpg"],
+            ["8", "Paella", "150", "paella.jpg"],
+            ["9", "Pizza", "190", "pizza.jpg"],
+            ["10", "TacoFish", "50", "tacofish.jpeg"],
+            ["11", "", "", "productonoencontrado.png"],
+        ];
+
+        function Buscador()
+        {
+            producto = document.getElementById("codigo").value;
+            var esta=false;
+            for (let i = 0; i < 11; i++) 
+            {
+                if (productos[i][0] == producto)
+                {
+                    document.getElementById("infoProducto").innerHTML= "Producto: "+ productos[i][1]+ "<br>Precio: $"
+                    + productos[i][2];
+                    document.getElementById("productoImagen").src=productos [i][3]
+                    esta=true;
+                    break;
+                }
+            }
+            if (esta == false) {
+                document.getElementById("infoProducto").innerHTML= "Producto no encontrado";
+                document.getElementById("productoImagen").src=productos[10][3]
+            }
+        }
+    </script>
+</head>
+
+<body bgcolor="#66666">
+    <h1>Buscador de Productos</h1>
+    Codigo de producto
+    <input type="text" name="" id="codigo"><br>
+    <input type="button" value="Buscar"  onclick="Buscador()"> <br>
+    <img src="" alt="" id="productoImagen" width="25%" height="75%">
+    <style>
+        .buscar {
+            background-color: #CACA23;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        img[src=""] {
+            display: none;
+}
+        </style>
+    <p style="font-size: 50px; font-weight: bold; " id="infoProducto" ></p>
+</body>
+</html>
