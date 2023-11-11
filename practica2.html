@@ -1,0 +1,161 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Practica 2</title>
+    <style>
+        ul,
+        #myUL {
+            list-style-type: none;
+        }
+
+        #myUL {
+            margin: 0;
+            padding: 0;
+        }
+
+        .caret {
+            cursor: pointer;
+            -webkit-user-select: none;
+            /* Safari 3.1+ */
+            -moz-user-select: none;
+            /* Firefox 2+ */
+            -ms-user-select: none;
+            /* IE 10+ */
+            user-select: none;
+        }
+
+        .caret::before {
+            content: "\25B6";
+            color: black;
+            display: inline-block;
+            margin-right: 6px;
+        }
+
+        .caret-down::before {
+            -ms-transform: rotate(90deg);
+            /* IE 9 */
+            -webkit-transform: rotate(90deg);
+            /* Safari */
+            transform: rotate(90deg);
+        }
+
+        .nested {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Arbol genealogíco</h2>
+    <p>veremos un ejemplo de mi arbol genealogíco</p>
+    <p>Click en las flechas para abrir o cerrar las ramas</p>
+
+    <ul id="myUL">
+
+        <li><span class="caret">David (1)</span>
+            <ul class="nested">
+                <!-- <li>Padre</li> -->
+                <li><span class="caret">Miguel (2)</span>
+                    <ul class="nested">
+                        <!-- Abuelo -->
+                        <li><span class="caret">Miguel (3)</span>
+                            <ul class="nested">
+                                <!-- <li>Bisabuelo</li> -->
+                                <li><span class="caret">Miguel (4)</span>
+                                    <ul class="nested">
+                                        <!-- tatarabuelos -->
+                                        <li>Miguel (5)</li>
+                                        <li>Josefina(5)</li>
+                                    </ul>
+                                </li>
+                                <li><span class="caret">Antonia (4)</span>
+                                    <ul class="nested">
+                                        <li>Francisca (5)</li>
+                                        <li>Antonio (5)</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <!-- abuela -->
+                        <li><span class="caret">Santos (3)</span>
+                            <ul class="nested">
+                                <li><span class="caret">Ramon (4)</span>
+                                    <ul class="nested">
+                                        <li>Luis (5)</li>
+                                        <li>Inés (5)</li>
+                                    </ul>
+                                </li>
+                                <li><span class="caret">Angelica (4)</span>
+                                    <ul class="nested">
+                                        <li>Angel (5)</li>
+                                        <li>Esperanza (5)</li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </li>
+                </li>
+            </ul>
+        </li>
+        <!-- <li>Madre</li> -->
+        <li><span class="caret">Ariadna (2)</span>
+            <ul class="nested">
+                <li><span class="caret">María (3)</span>
+                    <ul class="nested">
+                        <li><span class="caret">Trinidad (4)</span>
+                            <ul class="nested">
+                                <li>Fernanda (5)</li>
+                                <li>Jorge (5)</li>
+                            </ul>
+                        </li>
+                        <li><span class="caret">Alejandro (4)</span>
+                            <ul class="nested">
+                                <li>Jesus (5)</li>
+                                <li>María (5)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><span class="caret">Oscar (3)</span>
+                    <ul class="nested">
+                        <li><span class="caret">Carlos (4)</span>
+                            <ul class="nested">
+                                <li>Kevin (5)</li>
+                                <li>Alicia(5)</li>
+                            </ul>
+                        </li>
+                        <li><span class="caret">Yolanda (4)</span>
+                            <ul class="nested">
+                                <li>Humberto (5)</li>
+                                <li>Carlos (5)</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </li>
+            </ul>
+        </li>
+    </ul>
+    </li>
+    </ul>
+
+    <script>
+        var toggler = document.getElementsByClassName("caret");
+        var i;
+
+        for (i = 0; i < toggler.length; i++) {
+            toggler[i].addEventListener("click", function () {
+                this.parentElement.querySelector(".nested").classList.toggle("active");
+                this.classList.toggle("caret-down");
+            });
+        }
+    </script>
+
+</body>
+
+</html>
