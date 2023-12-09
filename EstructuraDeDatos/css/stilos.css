@@ -1,0 +1,29 @@
+body {
+    background-image: url("../img/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-image: url('../img/p3/descargar.jpeg');
+    background-size: cover;
+    color: white;
+}
+
+td,
+th {
+    border: 1px solid white;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+
+    display: none;
+    font-weight: bold;
+    text-align: center;
+    color: red;
+}

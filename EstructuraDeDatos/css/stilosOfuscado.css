@@ -1,0 +1,1 @@
+body,table{background-size:cover}body{background-image:url("../img/background.png");background-repeat:no-repeat;background-position:center;min-height:100vh}table{width:100%;border-collapse:collapse;background-image:url('../img/p3/descargar.jpeg');color:#fff}td,th{border:1px solid #fff;padding:8px}tr:nth-child(2n){display:none;font-weight:700;text-align:center;color:red}
